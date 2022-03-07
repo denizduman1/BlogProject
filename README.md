@@ -51,8 +51,9 @@
       Örnek durum: Bir olan User, public ICollection<Article> Articles { get; set; } iken çok olan Article ise
       public User User { get; set; } olarak tanımlanır.
   </li>
-  <li></li>
  </ol>
+ 
+### Commit: Data (Veri Erişim) Katmanımızı Oluşturalım - 1.Kısım
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
