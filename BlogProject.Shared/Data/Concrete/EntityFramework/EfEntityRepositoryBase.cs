@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace BlogProject.Shared.Data.Concrete.EntityFramework
 {
-    public class EfEntityRepositoryBase<T> : IEntityRepository<T>
+    public abstract class EfEntityRepositoryBase<T> : IEntityRepository<T>
         where T: class,IEntity,new()
     {
         private readonly DbContext _context;
