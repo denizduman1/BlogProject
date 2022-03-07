@@ -28,16 +28,31 @@
   </p>
 </div>
 
-<!-- ABOUT THE PROJECT -->
-## About The Project
-
-Katmanlar
+<!-- Katmanlar -->
+## Katmanlar
 * BlogProject.Data
 * BlogProject.Entities
 * BlogProject.Mvc
 * BlogProject.Services
 * BlogProject.Shared
 
+### Commit: Veritabanı Nesneleri Oluşturuldu
+ <ol>
+  <li>BlogProject.Shared katmanı bizim tüm .net 5 projelerinde kullanabileceğimiz ortak bir class library'dir.</li>
+  <li>İlgili katmana Entites adında klasör oluşturup ortak bir entity yapısını entegre ediyoruz.</li>
+  <li>IEntity adında veritabanı sınıflarımızı işaret edecek olan (imzası) bir interface oluşturuyoruz</li>
+  <li>EntityBase adında tüm veritabanı sınıflarına base görevi edinecek abstract base class'ımızı oluşturuyoruz.</li>
+  <li>EntityBase sınıfında methodlar ezilebilir olması adına virtual keywordünü alırken tarih kısmına default şimdiki tarihi             alıyor.Abstract keywordünü koymamamızın nedeni başlangıç değeri alamaması ve mutlaka ezilmesi gerekmesidir. Virtual'da
+      ise başlangıç değeri almalı ve daha sonradan ezilebilir olduğu için bize uygun olandır.</li>
+  <li>BlogProject.Entites katmanına geliyoruz ve ilgili veri tabanı sınıflarını EntityBase sınıfından inheritiance alarak ve de
+      IEntity interface imzasını implemente ederek hazırlıyoruz.</li>
+  <li>Burada önemli bir kısım bir e çok ilişkili tabloları hazırlarken bir olacak sınıfa çok olan sınıfın ICollection
+      yapısı tanımlanmasıdır. Çok durumda olan sınıf ta bir olan sınıftan ilgili sınıf adıyla property üretmesidir.
+      Örnek durum: Bir olan User, public ICollection<Article> Articles { get; set; } iken çok olan Article ise
+      public User User { get; set; } olarak tanımlanır.
+  </li>
+  <li></li>
+ </ol>
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
