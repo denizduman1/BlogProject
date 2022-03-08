@@ -15,7 +15,7 @@
   <h3 align="center">ASP CORE ile Blog Projesi</h3>
 
   <p align="center">
-    ASP.NET Core 5.0 Katmanlı Mimari ile Blog Projesi yapımı
+    ASP.NET 5.0 Katmanlı Mimari ile Blog Projesi yapımı
     <br />
     <a href="https://github.com/denizduman1/BlogProject"><strong>Explore the docs »</strong></a>
     <br />
