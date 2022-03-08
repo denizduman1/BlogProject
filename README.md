@@ -12,7 +12,7 @@
     <img src="https://www.chip.de/ii/1/2/6/3/5/8/2/8/3/Bild16.gif-4ff4769bc2e78c72.jpg" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">ASP CORE ile Blog Projesi</h3>
+  <h3 align="center">ASP.NET 5.0 ile Blog Projesi</h3>
 
   <p align="center">
     ASP.NET 5.0 Katmanlı Mimari ile Blog Projesi yapımı
