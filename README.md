@@ -9,7 +9,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/denizduman1/BlogProject">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/.NET_Core_Logo.svg/2048px-.NET_Core_Logo.svg.png" alt="Logo" width="80" height="80">
+    <img src="https://www.chip.de/ii/1/2/6/3/5/8/2/8/3/Bild16.gif-4ff4769bc2e78c72.jpg" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">ASP CORE ile Blog Projesi</h3>
