@@ -1,4 +1,5 @@
-﻿using BlogProject.Entities.Concrete;
+﻿using BlogProject.Data.Concrete.EntityFramework.Mappings;
+using BlogProject.Entities.Concrete;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,15 @@ namespace BlogProject.Data.Concrete.EntityFramework.Contexts
         {
             optionsBuilder.UseSqlServer(connectionString: @"Server=(localdb)\MSSQLLocalDB;Database=BlogProject;Trusted_Connection=True;
             Connect Timeout=30;MultipleActiveResultSets=True;");
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new ArticleMap());
+            modelBuilder.ApplyConfiguration(new CategoryMap());
+            modelBuilder.ApplyConfiguration(new CommentMap());
+            modelBuilder.ApplyConfiguration(new UserMap());
+            modelBuilder.ApplyConfiguration(new RoleMap());
         }
     }
 }
