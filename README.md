@@ -66,7 +66,12 @@
         veri ağacı oluşturup EF 'nin anlamasını sağlıyor ve de bu bize performans kazancı sağlatıyor.</li>
    <li>Data Katmanımızda veritabanımızdaki sınıfların interfacelerini oluşturup IEntityRepository<T> T içerisine ilgili sınıfı ekliyoruz.</li>
   </ol>
-
+### Commit: Data (Veri Erişim) Katmanımızı Oluşturalım - 2.Kısım
+  <ol>
+    <li>Data katmanında veritabanı nesnelerine ait repository sınıflarını oluşturuyoruz.(Entity Framework klasörünün altında topluyoruz çünkü buradaki sınıfları            EFEntityRepositoryBase<T> abstract sınıfından kalıtacağız.)</li>
+    <li>İlgili sınıftan abstract ettikten sonra interface Repolarımızı imza olarak ekliyoruz.(interfaceyi ekleme sebebimiz IoC için)</li>
+    <li>Projemizin adı ile Context sınıfı oluşturuyoruz. BlogProjectContext adında olacak sınıfımız EF'den gelen DBContext sınıfından inheritiance alacak.Bu sınıfta ilgili veritabanı sınıflarının mssql tablolarını oluşturuyoruz. OnConfiguring methodunda sql serverimizin adresini ve ayarlarınızı yapıyoruz.</li>
+  </ol>
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
