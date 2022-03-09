@@ -73,6 +73,9 @@
     <li>Data katmanında veritabanı nesnelerine ait repository sınıflarını oluşturuyoruz.(Entity Framework klasörünün altında topluyoruz çünkü buradaki sınıfları            EFEntityRepositoryBase<T> abstract sınıfından kalıtacağız.)</li>
     <li>İlgili sınıftan abstract ettikten sonra interface Repolarımızı imza olarak ekliyoruz.(interfaceyi ekleme sebebimiz IoC için)</li>
     <li>Projemizin adı ile Context sınıfı oluşturuyoruz. BlogProjectContext adında olacak sınıfımız EF'den gelen DBContext sınıfından inheritiance alacak.Bu sınıfta ilgili veritabanı sınıflarının mssql tablolarını oluşturuyoruz. OnConfiguring methodunda sql serverimizin adresini ve ayarlarınızı yapıyoruz.</li>
+    <li>OnConfiguring methodunda tanımladığımız Connect Timeout değeri varsayılan olarak 30'dur. 0 dan yüksek değer örnek 5, 5 saniye bağlanmak için bekle anlamına geliyor.
+        0 verirsek bu bağlanana kadar bekle anlamına gelmektedir.
+    </li>
   </ol>
 
 <!-- MARKDOWN LINKS & IMAGES -->
