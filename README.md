@@ -55,7 +55,7 @@
  
 ### Commit: Data (Veri Erişim) Katmanımızı Oluşturalım - 1.Kısım
   <ol>
-    <li>Data katmanımızda IEntityRepository interfacesini generic olarak oluşturuyoruz.</li> 
+    <li>Shared katmanımızda IEntityRepository interfacesini generic olarak oluşturuyoruz.</li> 
     <li>Generic olarak gelen T parametresi new'lene bilen IEntity interfacesini implemente eden bir class olmalıdır şartını ekliyoruz.</li> 
     <li>Asenkron methodları oluştururken Task ile tanımlıyoruz. Void methodlar void yerine task yazılarak; değer döndüren methodlar ise Task<T> (gibi) şeklinde yazılır.</li> 
     <li>Methodları abstract class'da tanımlarken de access modifier'dan sonra async keywordünü ekliyoruz.</li>  
@@ -64,6 +64,7 @@
     <li>Methodlarımıza ek olarak ilişkili tablolarda ilişkideki diğer tabloya erişmek için include params ekliyoruz. Bunu ekleyerek Lazy Loading(ilişkili tablolarda her başka       tablodan veri çağrıldığında sorgu yazan tek seferde getirmeyen mantık) yerine Eager Loading(Bağlı diğer tablolara daha çağrılmadan başlangıçta tek seferde getiren mantık)       mantığını getirmiş oluyoruz.</li>
     <li>Delegateleri Expression içerisine Func alarak tanımlıyoruz. Func olarak tanımladığımızda EF bunu anlamıyor ve tüm tablolara bakmak zorunda kalıyor. Expression
         veri ağacı oluşturup EF 'nin anlamasını sağlıyor ve de bu bize performans kazancı sağlatıyor.</li>
+   <li>Data Katmanımızda veritabanımızdaki sınıfların interfacelerini oluşturup IEntityRepository<T> T içerisine ilgili sınıfı ekliyoruz.</li>
   </ol>
 
 
