@@ -41,6 +41,26 @@ namespace BlogProject.Data.Concrete.EntityFramework.Mappings
             builder.Property(u => u.Note).HasMaxLength(500);
             builder.HasOne<Role>(u=>u.Role).WithMany(u=>u.Users).HasForeignKey(u=>u.RoleId);
             builder.ToTable("Users");
+
+            builder.HasData(new User
+            {
+                Id = 1,
+                RoleId = 1,
+                IsDeleted = false,
+                IsActive = true,
+                FirstName = "Deniz",
+                LastName = "Duman",
+                UserName = "denizduman",
+                Email = "ce.denizduman2@gmail.com",
+                CreatedByName = "InitialCreate",
+                CreatedDate = DateTime.Now,
+                ModifiedByName = "InitialCreate",
+                ModifiedDate = DateTime.Now,
+                Note = "Admin Kullanıcısı",
+                Description = "İlk admin kulanıcısı",
+                PasswordHash = Encoding.ASCII.GetBytes("0192023a7bbd73250516f069df18b500"),
+                Picture = "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSX4wVGjMQ37PaO4PdUVEAliSLi8-c2gJ1zvQ&usqp=CAU"
+            });
         } 
     }
 }

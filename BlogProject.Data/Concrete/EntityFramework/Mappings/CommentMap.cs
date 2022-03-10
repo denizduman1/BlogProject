@@ -28,6 +28,46 @@ namespace BlogProject.Data.Concrete.EntityFramework.Mappings
             builder.Property(c => c.IsDeleted).IsRequired();
             builder.Property(c => c.Note).HasMaxLength(500);
             builder.ToTable("Comments");
+
+            builder.HasData(new Comment
+            {
+                Id = 1,
+                ArticleId = 1,
+                Text = "C# çalışmaya başladım",
+                IsActive = true,
+                IsDeleted = false,
+                CreatedByName = "InitialCreate",
+                CreatedDate = DateTime.Now,
+                ModifiedByName = "InitialCreate",
+                ModifiedDate = DateTime.Now,
+                Note = "Yorum c# ile ilgili.",
+            },
+            new Comment
+            {
+                Id = 2,
+                ArticleId = 2,
+                Text = "C++ çok zor",
+                IsActive = true,
+                IsDeleted = false,
+                CreatedByName = "InitialCreate",
+                CreatedDate = DateTime.Now,
+                ModifiedByName = "InitialCreate",
+                ModifiedDate = DateTime.Now,
+                Note = "Yorum C++ ile ilgili.",
+            },
+            new Comment
+            {
+                Id = 3,
+                ArticleId = 3,
+                Text = "js harika",
+                IsActive = true,
+                IsDeleted = false,
+                CreatedByName = "InitialCreate",
+                CreatedDate = DateTime.Now,
+                ModifiedByName = "InitialCreate",
+                ModifiedDate = DateTime.Now,
+                Note = "Yorum js ile ilgili.",
+            });
         }
     }
 }
