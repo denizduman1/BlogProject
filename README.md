@@ -77,7 +77,22 @@
         0 verirsek bu bağlanana kadar bekle anlamına gelmektedir.
     </li>
   </ol>
-
+  
+### Commit: Fluent API ile Veritabanı için Mapping İşlemlerimizi Oluşturalım
+  
+  <ol>
+      <li>Data Katmanımızda Concrete alanı içerisindeki EntityFramework alanındaki Mappings klasörüne Fluent API'yi entegre ediyoruz.</li>
+      <li>Fluent API EntityFramework'den gelen bir sınıftır.Görevi, mssql tablolarını oluştururken veritabanı sınıf alanlarının         karşılıklarını belirlememize yardımcı olur(Map eder). Data Annotation yerine kullanıllır.</li>  
+      <li>IEntityTypeConfiguration<T> generic interface'yi implemente ederiz.</li>  
+      <li>Constructor oluşturup builder ile property lerimize varsa ilişkili diğer sınıfların ilişkisini ayarlarız.</li>  
+      <li>Son olarak ToTable methodu ile ilgili entity'nin mssql deki oluşturacağı tablonun adını vermiş oluruz.</li>    
+  </ol>
+  
+ ### Commit: Fluent API ile Veritabanı için Mapping İşlemlerimizi Oluşturalım - 2.Kısım
+  <ol>
+      <li>Mapping işlemlerini yaptıktan sonra Context sınıfımızda OnModelCreating methodunu ezerek(override) mapping sınıflarını configuration'larımıza ekliyoruz.</li>
+  </ol>
+ 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
