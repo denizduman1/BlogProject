@@ -93,6 +93,13 @@
       <li>Mapping işlemlerini yaptıktan sonra Context sınıfımızda OnModelCreating methodunu ezerek(override) mapping sınıflarını configuration'larımıza ekliyoruz.</li>
   </ol>
  
+  ### Commit: Unit Of Work Tasarım Deseni Projemize Uygulayalım
+  <ol>
+      <li>Data katmanımıza tüm repolarımızı kullanabileceğimiz IUnitOfWork interfacesi ve onu implemente eden UnitOfWork sınıfımızı oluşturuyoruz.</li>
+      <li>UnitOfWork sınıfımızda ilgili repoları return'liyoruz ve en son save changes i gerçekleştirmesi için Asenkron SaveAsync methodunu oluşturuyoruz.</li>
+      <li>Garbage collector normalde kullanılmayan sınıfları kendisi temizliyor ama ram'de yer var ise bu işlemi geciktirebiliyor. Bu yüzden IAsyncDisposable interfacesini IUnitOfWorke imza olarak ekliyoruz. DisposeAsync ile de ilgili sınıflarla işimiz bittikten sonra bellekten temizliyoruz.</li>
+  </ol>
+ 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
