@@ -99,6 +99,15 @@
       <li>UnitOfWork sınıfımızda ilgili repoları return'liyoruz ve en son save changes i gerçekleştirmesi için Asenkron SaveAsync methodunu oluşturuyoruz.</li>
       <li>Garbage collector normalde kullanılmayan sınıfları kendisi temizliyor ama ram'de yer var ise bu işlemi geciktirebiliyor. Bu yüzden IAsyncDisposable interfacesini IUnitOfWorke imza olarak ekliyoruz. DisposeAsync ile de ilgili sınıflarla işimiz bittikten sonra bellekten temizliyoruz.</li>
   </ol>
+  
+  ### Commit: Veritabanının Oluşturulması, İlk Verilerin Eklenmesi ve Migration İşlemleri
+  <ol>
+      <li>Veritabanına oluşturacağımız tablolara oluştururken ilk değerlerini de vermek için mappings klasöründe ilgili sınıflara HasData methodu ile verilerini ekliyoruz.
+          Eğer veri yoksa otomatik olarak girdiğimiz değerleri veritabanına aktaracak.</li>
+      <li>Artık migrationa hazırız. Powershell'den dotnet ef 5.0 kuruyoruz. Daha sonrasında migration yapmak için dotnet ef migrations add InitialCreate kodu yazıyoruz.</li>
+      <li>İlgili migration sınıfı oluşturulduktan sonra veritabanına bunu set etmek için dotnet ef database update kodumuzu yazıyoruz ve artık yazdığımız sınıfların veritabanında ilgili database'de tablolarını ve initial value'larını görmüş oluyoruz.</li>
+  </ol>
+  
  
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
