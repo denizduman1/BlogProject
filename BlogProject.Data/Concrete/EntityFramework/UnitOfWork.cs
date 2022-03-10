@@ -12,21 +12,26 @@ namespace BlogProject.Data.Concrete.EntityFramework
     public class UnitOfWork : IUnitOfWork
     {
         private readonly BlogProjectContext _context;
+        private EfArticleRepository _articleRepository;
+        private EfCategoryRepository _categoriyRepository;
+        private EfCommentRepository _commentRepository;
+        private EfRoleRepository _roleRepository;
+        private readonly EfUserRepository _userRepository;   
        
         public UnitOfWork(BlogProjectContext context)
         {
             _context = context;
         }
 
-        public IArticleRepository ArticleRepository => new EfArticleRepository(_context);
+        public IArticleRepository ArticleRepository => _articleRepository ?? new EfArticleRepository(_context);
 
-        public ICategoryRepository CategoryRepository => new EfCategoryRepository(_context);
+        public ICategoryRepository CategoryRepository => _categoriyRepository ?? new EfCategoryRepository(_context);
 
-        public IUserRepository UserRepository => new EfUserRepository(_context);
+        public IUserRepository UserRepository => _userRepository ?? new EfUserRepository(_context);
 
-        public IRoleRepository RoleRepository => new EfRoleRepository(_context);
+        public IRoleRepository RoleRepository => _roleRepository ?? new EfRoleRepository(_context);
 
-        public ICommentRepository CommentRepository => new EfCommentRepository(_context);
+        public ICommentRepository CommentRepository => _commentRepository ?? new EfCommentRepository(_context);
 
         public async ValueTask DisposeAsync()
         {
