@@ -1,4 +1,3 @@
-
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -108,16 +107,24 @@
       <li>İlgili migration sınıfı oluşturulduktan sonra veritabanına bunu set etmek için dotnet ef database update kodumuzu yazıyoruz ve artık yazdığımız sınıfların veritabanında ilgili database'de tablolarını ve initial value'larını görmüş oluyoruz.</li>
   </ol>
   
+  ### Commit: Result (Sonuç) Yapımızı Oluşturalım
+    
+    <ol>
+        <li>Shared katmanımıza service katmanında verileri çekerken sonuç değerini de görebilmek için IResult interfacesini  öncelikle ekliyoruz. IResult içerisinde ResultStatus adında enum(Success,Error,Warning,Information değerlerini içeren) bir property barındırıyor. Bunun dışında Mesaj ve Hata fırlatmasını içersin diye Exception türünden Exception propunu içeriyor.</li> 
+        <li>Shared katmanında yine Result adında IResult interfacesini implemente eden bir sınıf oluşturuyoruz. Propertylerinde sadece get methodu olduğu için ilgili değerleri constructordan alacak şekilde ayarlıyoruz.</li>
+        <li>IResult interfacesinden ayrı olarak geri döenecek bir data değeri olursa diye IDataResult tipinde IResult imzasınıda taşıyan ayri bir interface oluşturuyoruz. Interface data döneceği için <out T> tipinde generic yapıyoruz. Out keywordü koymamızın sebebi ise datanın hem T hem de IList<T> tipinde dönebilmesini sağlamaktır.</li>
+    </ol>
+  
  
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/denizduman1/BlogProject.svg?style=for-the-badge
 [contributors-url]: https://github.com/denizduman1/BlogProject/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/denizduman1/BlogProject.svg?style=for-the-badge
 [forks-url]: https://github.com/denizduman1/BlogProject/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/denizduman1/BlogProject.svg?style=for-the-badge
 [stars-url]: https://github.com/denizduman1/BlogProject/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/denizduman1/BlogProject.svg?style=for-the-badge
 [issues-url]: https://github.com/denizduman1/BlogProject/issues
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/deniz-duman-166a91218
