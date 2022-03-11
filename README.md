@@ -27,6 +27,14 @@
   </p>
 </div>
 
+<!-- Projenin İçerikleri -->
+## Projede kullanılan yapılar 
+ * Entity Framework Core 
+ * Generic Repository Pattern
+ * Fluent API
+ * Unit Of Work Design Pattern
+ 
+ 
 <!-- Katmanlar -->
 ## Katmanlar
 * BlogProject.Data
@@ -35,6 +43,8 @@
 * BlogProject.Services
 * BlogProject.Shared
 
+<!-- Commitler ve Yapılan İşler -->
+## Commitler ve Yapılan İşler
 ### Commit: Veritabanı Nesneleri Oluşturuldu
  <ol>
   <li>BlogProject.Shared katmanı bizim tüm .net 5 projelerinde kullanabileceğimiz ortak bir class library'dir.</li>
