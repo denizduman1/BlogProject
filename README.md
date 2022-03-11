@@ -108,14 +108,13 @@
   </ol>
   
   ### Commit: Result (Sonuç) Yapımızı Oluşturalım
-    
-    <ol>
-        <li>Shared katmanımıza service katmanında verileri çekerken sonuç değerini de görebilmek için IResult interfacesini  öncelikle ekliyoruz. IResult içerisinde ResultStatus adında enum(Success,Error,Warning,Information değerlerini içeren) bir property barındırıyor. Bunun dışında Mesaj ve Hata fırlatmasını içersin diye Exception türünden Exception propunu içeriyor.</li> 
-        <li>Shared katmanında yine Result adında IResult interfacesini implemente eden bir sınıf oluşturuyoruz. Propertylerinde sadece get methodu olduğu için ilgili değerleri constructordan alacak şekilde ayarlıyoruz.</li>
-        <li>IResult interfacesinden ayrı olarak geri döenecek bir data değeri olursa diye IDataResult tipinde IResult imzasınıda taşıyan ayri bir interface oluşturuyoruz. Interface data döneceği için <out T> tipinde generic yapıyoruz. Out keywordü koymamızın sebebi ise datanın hem T hem de IList<T> tipinde dönebilmesini sağlamaktır.</li>
-    </ol>
   
- 
+ <ol>
+      <li>Shared katmanımıza service katmanında verileri çekerken sonuç değerini de görebilmek için IResult interfacesini  öncelikle ekliyoruz. IResult içerisinde ResultStatus adında enum(Success,Error,Warning,Information değerlerini içeren) bir property barındırıyor. Bunun dışında Mesaj ve Hata fırlatmasını içersin diye Exception türünden Exception propunu içeriyor.</li>
+      <li>Shared katmanında Result adında IResult interfacesini implemente eden bir sınıf oluşturuyoruz. Propertylerinde sadece get methodu olduğu için ilgili değerleri constructordan alacak şekilde ayarlıyoruz</li>
+      <li>IResult interfacesinden ayrı olarak geri döenecek bir data değeri olursa diye IDataResult tipinde IResult imzasınıda taşıyan ayri bir interface oluşturuyoruz. Interface data döneceği için <out T> tipinde generic yapıyoruz. Out keywordü koymamızın sebebi ise datanın hem T hem de IList<T> tipinde dönebilmesini sağlamaktır.</li>
+  </ol>
+  
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/denizduman1/BlogProject.svg?style=for-the-badge
