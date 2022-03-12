@@ -124,7 +124,14 @@
       <li>Shared katmanında Result adında IResult interfacesini implemente eden bir sınıf oluşturuyoruz. Propertylerinde sadece get methodu olduğu için ilgili değerleri constructordan alacak şekilde ayarlıyoruz</li>
       <li>IResult interfacesinden ayrı olarak geri döenecek bir data değeri olursa diye IDataResult tipinde IResult imzasınıda taşıyan ayri bir interface oluşturuyoruz. Interface data döneceği için <out T> tipinde generic yapıyoruz. Out keywordü koymamızın sebebi ise datanın hem T hem de IList<T> tipinde dönebilmesini sağlamaktır.</li>
   </ol>
-  
+ 
+  ### Commit: Services (Servis) Katmanımızı Oluşturalım
+ <ol>
+    <li>Services katmanımızda data ile mvc arasında köprü vazifesi görmesi için ve de işle ilgili durumları belirtmek için ICategoryService ve CategoryManager sınıflarımızı oluşturuyoruz.</li>
+   <li>Verilerimizi async olacak şekilde IDataResult ya da Result tipinde geri dönüşümünü sağlıyoruz. Burda geri döndürdüğümüz sınıflar DTO sınıflarıdır. Çünkü kullanıcının bilmesine gerek olmadığı property'ler vardır. Dto sınıfları içerisinde Data Annotation ile gerekli required bilgileri ve display namelerini belirtiyoruz.(Fluent Validation ile de bunu yapmak mümkündür.)</li>
+   <li>Ekleme güncelleme gibi doğrudan entity kendsini isteyen durumlarda Dto sınıfını Entity sınıfına convert ederken AutoMapping yapısını kullanıyoruz.</li>
+  </ol>
+        
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/denizduman1/BlogProject.svg?style=for-the-badge
