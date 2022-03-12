@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 namespace BlogProject.Shared.Utilities.Results.Abstract
 {
     public interface IDataResult<out T> : IResult
-        where T: class,IEntity,new()
     {
         public T Data { get; } // Categori, List of Category
     }

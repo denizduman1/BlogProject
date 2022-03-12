@@ -9,8 +9,7 @@ using System.Threading.Tasks;
 
 namespace BlogProject.Shared.Utilities.Results.Concrete
 {
-    public class DataResult<T> : Result, IDataResult<T>
-        where T : class, IEntity, new()
+    public class DataResult<T> : Result, IDataResult<T>        
     {
         public DataResult(T data, ResultStatus resultStatus) : base(resultStatus)
         {

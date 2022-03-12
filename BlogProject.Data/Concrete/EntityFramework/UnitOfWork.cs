@@ -16,7 +16,7 @@ namespace BlogProject.Data.Concrete.EntityFramework
         private EfCategoryRepository _categoriyRepository;
         private EfCommentRepository _commentRepository;
         private EfRoleRepository _roleRepository;
-        private readonly EfUserRepository _userRepository;   
+        private EfUserRepository _userRepository;   
        
         public UnitOfWork(BlogProjectContext context)
         {
