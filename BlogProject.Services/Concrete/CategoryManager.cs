@@ -65,9 +65,13 @@ namespace BlogProject.Services.Concrete
             var categories = await _unitOfWork.CategoryRepository.GetAllAsync(predicate:null,c => c.Articles);
             if (categories.Count > -1)
             {
-                return new DataResult<CategoryListDto>(new CategoryListDto { Category = categories,ResultStatus = ResultStatus.Success}, ResultStatus.Success);
+                return new DataResult<CategoryListDto>(new CategoryListDto { Categories = categories,ResultStatus = ResultStatus.Success}, ResultStatus.Success);
             }
-            return new DataResult<CategoryListDto>(null, ResultStatus.Error, "Böyle bir kategori bulunamadı");
+            return new DataResult<CategoryListDto>(new CategoryListDto() { 
+             Categories = null,
+             ResultStatus = ResultStatus.Error,
+             Message = "Hiç bir kategori bulunamadı."
+            }, ResultStatus.Error, "Böyle bir kategori bulunamadı");
         }
 
         public async Task<IDataResult<CategoryListDto>> GetAllByNonDeleted()
@@ -75,7 +79,7 @@ namespace BlogProject.Services.Concrete
             var categories = await _unitOfWork.CategoryRepository.GetAllAsync(predicate: c => !c.IsDeleted, c => c.Articles);
             if (categories.Count > -1)
             {
-                return new DataResult<CategoryListDto>(new CategoryListDto { Category = categories, ResultStatus = ResultStatus.Success }, ResultStatus.Success);
+                return new DataResult<CategoryListDto>(new CategoryListDto { Categories = categories, ResultStatus = ResultStatus.Success }, ResultStatus.Success);
             }
             return new DataResult<CategoryListDto>(null, ResultStatus.Error, "Böyle bir kategori bulunamadı");
         }
@@ -85,7 +89,7 @@ namespace BlogProject.Services.Concrete
             var categories = await _unitOfWork.CategoryRepository.GetAllAsync(predicate: c => !c.IsDeleted && c.IsActive, c => c.Articles);
             if (categories.Count > -1)
             {
-                return new DataResult<CategoryListDto>(new CategoryListDto { Category = categories, ResultStatus = ResultStatus.Success }, ResultStatus.Success);
+                return new DataResult<CategoryListDto>(new CategoryListDto { Categories = categories, ResultStatus = ResultStatus.Success }, ResultStatus.Success);
             }
             return new DataResult<CategoryListDto>(null, ResultStatus.Error, "Böyle bir kategori bulunamadı");
         }
