@@ -33,6 +33,7 @@
  * Generic Repository Pattern
  * Fluent API
  * Unit Of Work Design Pattern
+ * Auto Mapper
  
  
 <!-- Katmanlar -->
